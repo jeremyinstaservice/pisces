@@ -66,7 +66,7 @@ const Services = () => {
           </div>
 
           {/* three */}
-          <div className="nft-background flex-1 flex flex-col h-[43rem] shadow-md rounded-md">
+          <div className="relative nft-background flex-1 flex flex-col h-[43rem] shadow-md rounded-md">
             <h2 className="absolute bottom-20 flex items-end justify-end text-white text-6xl font-bold px-2">
               Buy and Sell <br />
               Nfts
