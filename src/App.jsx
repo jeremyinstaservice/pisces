@@ -9,7 +9,7 @@ import Navbar from "./layouts/Navbar";
 
 function App() {
   return (
-    <Router basename="/my-pisces">
+    <Router basename="/myPisces">
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
