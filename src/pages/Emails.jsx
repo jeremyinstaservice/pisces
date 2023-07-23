@@ -18,7 +18,9 @@ const Emails = () => {
   useEffect(() => {
     try {
       const fetchData = async () => {
-        const response = await axios.get("http://localhost:8080/api/emails");
+        const response = await axios.get(
+          "https://piscesconsultants.vercel.app/emails"
+        );
         setData(response.data);
       };
       fetchData();
