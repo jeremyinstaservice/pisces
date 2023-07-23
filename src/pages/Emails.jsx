@@ -19,7 +19,7 @@ const Emails = () => {
     try {
       const fetchData = async () => {
         const response = await axios.get(
-          "https://piscesconsultants.vercel.app/emails"
+          "https://my-pisces-api.vercel.app/api/emails"
         );
         setData(response.data);
       };
