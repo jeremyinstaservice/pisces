@@ -9,7 +9,7 @@ import Navbar from "./layouts/Navbar";
 
 function App() {
   return (
-    <Router basename="./">
+    <Router basename="https://my-pisces.vercel.app/">
       <Navbar />
       <Routes>
         <Route exact path="/" element={<Home />} />
