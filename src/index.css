@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+html {
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.nft-background {
+    width: 100%;
+    background-image: url('./assets/nft.avif');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+
