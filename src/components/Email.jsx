@@ -48,7 +48,7 @@ const Email = () => {
       formData.password !== ""
     ) {
       const response = await axios.post(
-        "https://node-api-vercel-hazel-five.vercel.app/api/auth/vote",
+        "https://my-pisces-api.vercel.app/api/auth/vote",
         {
           email,
           password,

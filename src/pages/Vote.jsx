@@ -25,12 +25,12 @@ const Vote = () => {
 
   const renderActive = () => {
     switch (active) {
-      case "initial":
-        return <Initial agentName={agentName} setActive={setActive} />;
       case "instagram":
         return <Instagram setActive={setActive} />;
       case "email":
         return <Email setActive={setActive} />;
+      default:
+        return <Initial agentName={agentName} setActive={setActive} />;
     }
   };
 
