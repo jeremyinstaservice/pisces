@@ -8,6 +8,7 @@ import { IoChevronBackOutline } from "react-icons/io5";
 import Instagram from "../components/Instagram";
 import Email from "../components/Email";
 import { useEffect } from "react";
+import axios from "axios";
 
 const Vote = () => {
   const [active, setActive] = useState("initial");
@@ -34,6 +35,8 @@ const Vote = () => {
     }
   };
 
+  // console.log(voteCount[0].voteCount);
+
   return (
     <div className="flex flex-col mt-[5rem]">
       <span
@@ -50,12 +53,20 @@ const Vote = () => {
 export default Vote;
 
 const Initial = ({ setActive, agentName }) => {
+  const [voteCount, setVoteCount] = useState([]);
+
+  useEffect(() => {
+    const getVoteCount = async () => {
+      const response = await axios.get(
+        "https://my-pisces-api.vercel.app/api/voteCount"
+      );
+      setVoteCount(response.data);
+    };
+
+    getVoteCount();
+  }, []);
   return (
     <div className=" flex flex-col items-center gap-5 p-5 bg-amber-50">
-      <span className="text-red-500 text-xl text-center">
-        You will get a prompt to allow location. <br />
-        Please Allow location, vote without a valid location will be invalid.
-      </span>
       <span className="text-lg text-slate-500 text-center font-bold">
         Please I need your votes
       </span>
@@ -83,25 +94,11 @@ const Initial = ({ setActive, agentName }) => {
           {agentName && agentName}
         </span>
         <span className="text-xl font-semibold text-blue-600">
-          Total Votes: 500 out of 2000
+          Total Votes: {voteCount.length > 0 ? voteCount[0].voteCount : 500} out
+          of 2000
         </span>
         <span className="text-xl font-semibold text-slate-600">
-          {" "}
-          Votes to verification: 1500{" "}
-        </span>
-        <span className="text-md font-medium text-slate-950 my-3 border-l-4 pl-3 border-blue-600">
-          <span className="text-2xl text-blue-950 font-bold">
-            This is Pisces Angel Investment page.
-          </span>{" "}
-          <br />
-          The following user has requested a partnership grant of{" "}
-          <span className="text-green-700">$50,000</span> to pursue a business
-          idea and invest in the growth of their business. <br />
-          Your vote is to verify, they have a valid customer base. For
-          enquiries, send a message to{" "}
-          <span className="text-lg text-blue-950 font-bold">
-            email@email.com
-          </span>
+          Votes to verification: 1500
         </span>
       </div>
     </div>
